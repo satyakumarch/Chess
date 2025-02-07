@@ -100,24 +100,20 @@ export const ChessBoard = ({ chess, board, socket, setBoard }: {
                                                 },
                                             })
                                         );
-                                        setFrom(null);
-                                        chess.move({ from, to: squareRepresentation });
+                                        // setFrom(null);
+                                        // chess.move({ from, to: squareRepresentation });
                                         setBoard(chess.board());
                                         console.log({ from, to: squareRepresentation });
                                     }
-                                }}
-                                className={`w-16 h-16 ${
-                                    (i + j) % 2 === 0 ? 'bg-green-500' : 'bg-white'
-                                }`}
-                            >
+                                }} key={j} className={`w-16 h-16 ${(i + j) % 2 === 0 ? 'bg-green-500' : 'bg-slate-500' }`} >
                                 <div className='w-full justify-center flex h-full'>
                                     <div className='h-full justify-center flex flex-col'>
                                         {square ?<img className='w-4' src={`/${square?.color==="b" ?
-                                            square?.type: ` $ {square?. type?.toUppercase()} copy`}.png`}/>:null}
+                                            square?.type: `${square?.type?.toUpperCase()} copy`}.png`}/>:null}
                                     </div>
                                 </div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
             ))}

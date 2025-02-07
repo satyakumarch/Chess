@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChessBoard from "../components/ChessBoard";
 import Button from "../components/Button";
-import { useNavigate } from "react-router-dom"; // ✅ Correct way to navigate
 import { useSocket } from "../hooks/useSocket";
 import { Chess, Move } from 'chess.js'
 
